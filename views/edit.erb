@@ -1,0 +1,24 @@
+<h1>Edit Order</h1>
+
+<form action="/pizza-orders/<%=@order.id%>" method="post">
+
+ <label for="first-name"> First Name </label>
+ <input id = "first-name" type="text" name="first_name" value=<%= @order.first_name %> required>
+ <br>
+ <label for="last-name"> Last Name </label>
+ <input id = "last-name" type="text" name="last_name" value=<%= @order.last_name %> required> <!-- last_name matches to the function in pizza_order.rb-->
+ <br>
+ <label for="pizza-select"> Select Pizza </label>
+ <select id = "pizza-select" name="topping" value=<%= @order.topping %>>
+   <option value="Margherita">Margherita</option>
+   <option value="Calzone">Calzone</option>
+ </select>
+ <br>
+ <label for="quantity"> Quantity: </label>
+ <input id = "quantity" type="number" name="quantity" min="1" value=<%= @order.quantity %> required>
+
+ <input type="submit" value="Update Order">
+
+<!-- submitting the form 'posts' a hash to the location on line 3 -->
+
+</form>

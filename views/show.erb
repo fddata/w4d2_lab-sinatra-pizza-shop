@@ -1,0 +1,23 @@
+<h1>View Pizza Order</h1>
+
+
+<hr>
+<p>First Name: <%= @order.first_name   %> </p>
+<p>Last Name: <%=  @order.last_name  %></p>
+<p>Topping: <%=  @order.topping  %></p>
+<p>Quantity: <%=  @order.quantity  %></p>
+<hr>
+
+<!-- As delete button changes the database, we use the post method.
+This stops people deleting from within the browser.
+Can't make a hyperlink to a POST request, use a button inside a <form> with its method and action properly set.-->
+<form action="/pizza-orders/<%= @order.id %>/delete" method="post">
+  <input type="submit" value="Delete">
+</form>
+
+
+<!-- Edit order will just 'get' us the existing information from the database.
+For this reason we just use the 'get' method in the action given in the lab instructions. -->
+<form action="/pizza-orders/<%= @order.id %>/edit" method="get">
+  <input type="submit" value="Edit Order">
+</form>

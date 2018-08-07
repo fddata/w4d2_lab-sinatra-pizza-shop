@@ -1,0 +1,9 @@
+<h1>All Pizza Orders</h1>
+
+
+<% @orders.each do |order| %>
+  <p>Name: <%= order.pretty_name()%> </p>
+  <p>Order: <%= order.quantity() %> x <%= order.topping %></p>
+  <p><a href="/pizza-orders/<%=order.id%>">Show order</a></p>
+  <hr>
+<% end %>
